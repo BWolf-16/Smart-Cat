@@ -1,4 +1,5 @@
 {
+  "$schema": "https://go.kicad.org/pcm/schemas/v1",
   "name": "Smart Cat AI Assistant",
   "description": "AI-powered assistant for KiCad PCB design with automatic circuit generation. Supports Claude, OpenAI, and custom APIs.",
   "description_full": "Smart Cat AI Assistant is your intelligent companion for electronics design in KiCad. It provides AI-powered analysis of PCB layouts and schematics, automatic circuit generation from natural language requests, and comprehensive design feedback. Features include universal AI support (Claude, OpenAI, custom APIs), conversation memory, advanced KiCad operations, and a user-friendly interface. Perfect for both beginners learning PCB design and experts looking to accelerate their workflow.",
