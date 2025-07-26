@@ -30,11 +30,11 @@ def get_kicad_plugin_directory():
 def install_plugin():
     """Install the plugin to KiCad's plugins directory"""
     try:
-        # Get source and destination paths
-        source_dir = Path(__file__).parent / "kicat_ai"
-        dest_dir = get_kicad_plugin_directory() / "kicat_ai"
+        # Get source and destination paths - updated for Smart Cat rebranding
+        source_dir = Path(__file__).parent
+        dest_dir = get_kicad_plugin_directory() / "smart_cat"
         
-        print(f"Installing KiCat AI Assistant Plugin...")
+        print(f"Installing Smart Cat AI Assistant Plugin...")
         print(f"Source: {source_dir}")
         print(f"Destination: {dest_dir}")
         
@@ -53,7 +53,7 @@ def install_plugin():
         print("✓ Plugin installed successfully!")
         print("\nNext steps:")
         print("1. Restart KiCad PCB Editor")
-        print("2. Look for 'KiCat AI Assistant' in the toolbar or Tools menu")
+        print("2. Look for 'Smart Cat AI Assistant' in the toolbar or Tools menu")
         print("3. Click the plugin button to launch the assistant")
         print("4. Configure your API key in the settings (gear icon)")
         
@@ -67,10 +67,10 @@ def install_plugin():
 def uninstall_plugin():
     """Uninstall the plugin from KiCad"""
     try:
-        dest_dir = get_kicad_plugin_directory() / "kicat_ai"
+        dest_dir = get_kicad_plugin_directory() / "smart_cat"
         
         if dest_dir.exists():
-            print("Uninstalling KiCat AI Assistant Plugin...")
+            print("Uninstalling Smart Cat AI Assistant Plugin...")
             shutil.rmtree(dest_dir)
             print("✓ Plugin uninstalled successfully!")
             print("Please restart KiCad to complete the removal.")
@@ -122,7 +122,7 @@ def check_requirements():
 
 def main():
     """Main setup function"""
-    print("KiCat AI Assistant Plugin Setup")
+    print("Smart Cat AI Assistant Plugin Setup")
     print("=" * 40)
     
     if len(sys.argv) < 2:

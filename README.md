@@ -1,4 +1,13 @@
-# Smart Cat AI Assistant Plugin 🐱👓
+# Smart Cat AI Ass### Method 1: Manual Installation
+
+1. **Download the Plugin**: Extract the entire `Smart-Cat` folder to your KiCad plugins directory:
+   - **Windows**: `%APPDATA%\kicad\7.0\scripting\plugins\smart_cat\`
+   - **macOS**: `~/Library/Application Support/kicad/7.0/scripting/plugins/smart_cat/`
+   - **Linux**: `~/.local/share/kicad/7.0/scripting/plugins/smart_cat/`
+
+2. **Restart KiCad**: Close and reopen KiCad PCB Editor
+
+3. **Verify Installation**: Look for "Smart Cat AI Assistant" in the Tools menu or plugin toolbargin 🐱👓
 
 *Version 1.0.0*
 
