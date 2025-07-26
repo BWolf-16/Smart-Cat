@@ -1,0 +1,11 @@
+# Placeholder icon file
+# In a real implementation, this would be a PNG image file
+# For now, this serves as a placeholder
+
+# To create an actual icon:
+# 1. Create a 24x24 or 32x32 pixel PNG image
+# 2. Use a robot or AI-themed icon design
+# 3. Save as icon.png in this directory
+# 4. The main.py file will reference this icon
+
+print("Icon placeholder - replace with actual PNG file")

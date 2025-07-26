@@ -1,0 +1,15 @@
+# Placeholder for Smart Cat AI Assistant Logo
+# 
+# This file should contain the cute cat with glasses logo.
+# See logo_design.md for the design specification.
+#
+# To create the logo:
+# 1. Use the design specification in resources/logo_design.md
+# 2. Create SVG and PNG versions
+# 3. Replace this placeholder file
+#
+# Required sizes:
+# - smart_cat_logo_32.png (32x32)
+# - smart_cat_logo_48.png (48x48) 
+# - smart_cat_logo_64.png (64x64)
+# - smart_cat_logo.svg (vector)
