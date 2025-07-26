@@ -154,9 +154,32 @@ def install_plugin():
             print("Removing existing installation...")
             shutil.rmtree(dest_dir)
         
-        # Copy plugin files
-        print("Copying plugin files...")
-        shutil.copytree(source_dir, dest_dir)
+        # Create fresh destination directory
+        dest_dir.mkdir(exist_ok=True)
+        
+        # List of essential plugin files to copy
+        essential_files = [
+            "__init__.py", "main.py", "ui.py", "AI_API.py", "config.py",
+            "enhanced_parser.py", "kicad_operations.py", "circuit_generator.py",
+            "permissions.py", "parser.py"
+        ]
+        
+        # Copy essential files
+        print("Copying essential plugin files...")
+        for file_name in essential_files:
+            source_file = source_dir / file_name
+            if source_file.exists():
+                shutil.copy2(source_file, dest_dir / file_name)
+                print(f"  ✓ Copied {file_name}")
+            else:
+                print(f"  ⚠ Missing {file_name}")
+        
+        # Copy resources folder if it exists
+        resources_src = source_dir / "resources"
+        if resources_src.exists():
+            resources_dest = dest_dir / "resources"
+            shutil.copytree(resources_src, resources_dest)
+            print("  ✓ Copied resources/")
         
         print("✓ Plugin installed successfully!")
         print("\nNext steps:")
