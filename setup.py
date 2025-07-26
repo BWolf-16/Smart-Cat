@@ -19,7 +19,17 @@ def get_kicad_plugin_directory():
     system = platform.system()
     
     if system == "Windows":
-        # Windows: %APPDATA%\kicad\7.0\scripting\plugins\
+        # Check for KiCad 9.0+ first (newer location)
+        kicad9_dir = Path.home() / "Documents" / "KiCad" / "9.0" / "3rdparty" / "plugins"
+        if kicad9_dir.exists():
+            return kicad9_dir
+        
+        # Check for KiCad 8.0 (Documents location)
+        kicad8_dir = Path.home() / "Documents" / "KiCad" / "8.0" / "3rdparty" / "plugins"
+        if kicad8_dir.exists():
+            return kicad8_dir
+            
+        # Fallback to KiCad 7.0 (AppData location)
         appdata = os.environ.get("APPDATA", "")
         return Path(appdata) / "kicad" / "7.0" / "scripting" / "plugins"
     
@@ -78,8 +88,14 @@ def install_from_github(repo_url="https://github.com/BWolf-16/Smart-Cat", branch
         if not source_dir:
             return False
         
-        # Get destination path
-        dest_dir = get_kicad_plugin_directory() / "smart_cat"
+        # Get destination path - updated for KiCad 9.0+ naming convention
+        plugins_dir = get_kicad_plugin_directory()
+        
+        # Use proper plugin naming for KiCad 9.0+
+        if "3rdparty" in str(plugins_dir):
+            dest_dir = plugins_dir / "com_smartcat_ai_assistant"
+        else:
+            dest_dir = plugins_dir / "smart_cat"
         
         print(f"Installing Smart Cat AI Assistant from GitHub...")
         print(f"Source: {source_dir}")
@@ -140,7 +156,13 @@ def install_plugin():
     try:
         # Get source and destination paths - updated for Smart Cat rebranding
         source_dir = Path(__file__).parent
-        dest_dir = get_kicad_plugin_directory() / "smart_cat"
+        plugins_dir = get_kicad_plugin_directory()
+        
+        # Use proper plugin naming for KiCad 9.0+
+        if "3rdparty" in str(plugins_dir):
+            dest_dir = plugins_dir / "com_smartcat_ai_assistant"
+        else:
+            dest_dir = plugins_dir / "smart_cat"
         
         print(f"Installing Smart Cat AI Assistant Plugin...")
         print(f"Source: {source_dir}")
