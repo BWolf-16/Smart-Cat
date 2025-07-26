@@ -1,0 +1,13 @@
+{
+    "identifier": "com.smartcat.ai.assistant",
+    "name": "Smart Cat AI Assistant",
+    "description": "AI-powered assistant for KiCad PCB design with automatic circuit generation",
+    "version": "1.0.0",
+    "author": "Smart Cat AI Team",
+    "license": "MIT",
+    "kicad_version": "9.0",
+    "python_version": "3.6+",
+    "type": "action_plugin",
+    "main_module": "main",
+    "main_class": "SmartCatAIAssistantPlugin"
+}

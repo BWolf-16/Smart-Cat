@@ -79,11 +79,8 @@ class SmartCatAIAssistantPlugin(pcbnew.ActionPlugin):
                 print(f"Smart Cat AI Assistant Error: {e}")
 
 
-# Register the plugin
-if pcbnew:
-    SmartCatAIAssistantPlugin().register()
-else:
-    print("Smart Cat AI Assistant: PCBNew not available, plugin not registered")
+# Plugin registration is handled by __init__.py
+# Don't register here to avoid conflicts
 
 
 def get_plugin_version():

@@ -22,12 +22,12 @@ KICAD_VERSION_MIN = "7.0.0"
 try:
     from .main import SmartCatAIAssistantPlugin
     
-    # This will register the plugin with KiCad
-    plugin_instance = SmartCatAIAssistantPlugin()
+    # Register the plugin instance with KiCad
+    # This happens when the plugin directory is loaded
     
 except ImportError as e:
     print(f"Smart Cat AI Assistant: Failed to import main plugin class: {e}")
-    plugin_instance = None
+    SmartCatAIAssistantPlugin = None
 
 # Export public API
 __all__ = [
